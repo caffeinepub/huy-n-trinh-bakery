@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Fraunces", serif;
+    --font-body: "Lora", serif;
+    --font-mono: monospace;
+    --radius: 0.75rem;
+
+    --background: 0.97 0.02 60;
+    --foreground: 0.25 0.05 60;
+    --card: 0.98 0.02 65;
+    --card-foreground: 0.25 0.05 60;
+    --popover: 0.98 0.02 65;
+    --popover-foreground: 0.25 0.05 60;
+
+    --primary: 0.58 0.16 15;
+    --primary-foreground: 0.98 0.01 0;
+
+    --secondary: 0.88 0.08 40;
+    --secondary-foreground: 0.35 0.06 50;
+    --muted: 0.93 0.03 50;
+    --muted-foreground: 0.45 0.04 60;
+
+    --accent: 0.72 0.12 340;
+    --accent-foreground: 0.98 0.01 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.92 0.02 65;
+    --input: 0.94 0.02 65;
+    --ring: 0.72 0.12 340;
+
+    --chart-1: 0.72 0.12 340;
+    --chart-2: 0.58 0.16 15;
+    --chart-3: 0.88 0.08 40;
+    --chart-4: 0.65 0.14 30;
+    --chart-5: 0.52 0.18 20;
+
+    --sidebar: 0.98 0.02 65;
+    --sidebar-foreground: 0.25 0.05 60;
+    --sidebar-primary: 0.58 0.16 15;
+    --sidebar-primary-foreground: 0.98 0.01 0;
+    --sidebar-accent: 0.88 0.08 40;
+    --sidebar-accent-foreground: 0.35 0.06 50;
+    --sidebar-border: 0.92 0.02 65;
+    --sidebar-ring: 0.72 0.12 340;
+  }
+
+  .dark {
+    --background: 0.18 0.03 55;
+    --foreground: 0.92 0.02 65;
+    --card: 0.22 0.03 60;
+    --card-foreground: 0.92 0.02 65;
+    --popover: 0.25 0.04 58;
+    --popover-foreground: 0.92 0.02 65;
+
+    --primary: 0.75 0.12 20;
+    --primary-foreground: 0.18 0.03 55;
+
+    --secondary: 0.35 0.06 50;
+    --secondary-foreground: 0.88 0.04 65;
+    --muted: 0.3 0.05 55;
+    --muted-foreground: 0.62 0.05 60;
+
+    --accent: 0.82 0.1 345;
+    --accent-foreground: 0.18 0.03 55;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.18 0.03 55;
+
+    --border: 0.3 0.04 60;
+    --input: 0.3 0.04 60;
+    --ring: 0.82 0.1 345;
+
+    --chart-1: 0.82 0.1 345;
+    --chart-2: 0.75 0.12 20;
+    --chart-3: 0.88 0.08 40;
+    --chart-4: 0.7 0.14 30;
+    --chart-5: 0.65 0.16 25;
+
+    --sidebar: 0.22 0.03 60;
+    --sidebar-foreground: 0.92 0.02 65;
+    --sidebar-primary: 0.75 0.12 20;
+    --sidebar-primary-foreground: 0.18 0.03 55;
+    --sidebar-accent: 0.35 0.06 50;
+    --sidebar-accent-foreground: 0.88 0.04 65;
+    --sidebar-border: 0.3 0.04 60;
+    --sidebar-ring: 0.82 0.1 345;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-card {
+    box-shadow: 0 4px 12px oklch(0 0 0 / 0.08);
+  }
+
+  .shadow-hover {
+    box-shadow: 0 8px 20px oklch(0 0 0 / 0.12);
+  }
+
+  .text-display {
+    @apply font-display text-3xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+
+  .text-heading {
+    @apply font-display text-xl md:text-2xl font-bold;
+  }
+
+  .text-subheading {
+    @apply font-body text-lg font-semibold;
+  }
+
+  .text-body {
+    @apply font-body text-base leading-relaxed;
+  }
+
+  .btn-base {
+    @apply px-6 py-3 rounded-lg font-semibold transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-primary text-primary-foreground hover:opacity-90 active:opacity-75;
+  }
+
+  .btn-secondary {
+    @apply btn-base bg-secondary text-secondary-foreground hover:opacity-90 active:opacity-75;
+  }
+
+  .btn-ghost {
+    @apply btn-base bg-transparent border border-border text-foreground hover:bg-muted active:bg-muted/60;
+  }
+
+  .card-base {
+    @apply bg-card text-card-foreground rounded-xl p-6 shadow-card transition-smooth hover:shadow-hover;
+  }
+}

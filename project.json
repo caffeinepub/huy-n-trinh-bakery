@@ -1,0 +1,23 @@
+{
+  "overview": "A premium 6-page Vietnamese bakery website for Huyền Trinh Coffee & Bake in Nha Trang. Features a beautiful pastel design with hero banner, product showcase, about story, contact info, feedback form, order form, and shopping cart.",
+  "features": [
+    "Homepage with hero banner and product grid",
+    "About page with bakery story and mission",
+    "Contact page with email, phone, Zalo, WhatsApp",
+    "Feedback form with success message",
+    "Order form with product dropdown",
+    "Cart page with total price and checkout",
+    "Soft pastel design (beige, pink, brown)",
+    "Fully in Vietnamese language"
+  ],
+  "category": "showcase",
+  "tags": [
+    "bakery",
+    "vietnamese",
+    "cafe",
+    "food",
+    "pastel",
+    "ecommerce"
+  ],
+  "last_updated": "2026-04-07T18:59:28.980Z"
+}
